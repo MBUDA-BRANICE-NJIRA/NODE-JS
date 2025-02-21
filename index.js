@@ -1,6 +1,6 @@
 const express = require('express');//This imports express
 const app = express();//This helps use express
-const routes = require('./routes/api');
+const routes = require('./routes/StudentRoute');
 app.use(routes);
 
 app.listen(process.env.port || 4000, () => {
