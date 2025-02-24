@@ -6,4 +6,3 @@ mongoose.connect(process.env.MONGODB_URI, {dbname: process.env.DB_NAME})
     console.log('mongodb connected');
 })
 .catch((err)=>console.log(err.message))
-// .catch ((err)=>console.error(err))
