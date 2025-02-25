@@ -1,3 +1,4 @@
+
 const studentController = require('../controllers/studentController');
 const controllers = require('../controlers/studentController');
 //!Import the express module
@@ -11,15 +12,15 @@ const routes = express.Router();//This creates an instance of a router
 routes.get('/getAllstudents', studentController.getAllStudents);
 
 //Add students
-routes.post('/addStudent/id:', studentController.addStudent);
+routes.post('/addStudent', studentController.addStudent);
 
 //Update student
-routes.pa('/students/id:', (request, response) =>{
+routes.get('/getStudentByid/id:', (request, response) => {
     response.send({type: ' Update Request'});
 });
 
 //Delete student
-routes.delete('/students/id',(request ,response) =>{
+routes.delete('/students/id',(request ,response) => {
     response.send({type: 'Delete request'});
 });
 
