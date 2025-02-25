@@ -1,6 +1,9 @@
-
+const studentController = require('../controllers/studentController');
+const controllers = require('../controlers/studentController');
+//!Import the express module
 
 const express = require('express');//This imports express
+
 const routes = express.Router();//This creates an instance of a router
 
 
@@ -18,7 +21,7 @@ routes.pa('/students/id:', (request, response) =>{
 //Delete student
 routes.delete('/students/id',(request ,response) =>{
     response.send({type: 'Delete request'});
-})
+});
 
 
 module.exports = routes;
