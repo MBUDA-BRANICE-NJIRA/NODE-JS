@@ -1,4 +1,5 @@
 const Student = require('../models/studentModel')
+const mongoose = require('mongoose')
 module.exports ={
     getAllStudents: async(req,res,next)=>{
         try{

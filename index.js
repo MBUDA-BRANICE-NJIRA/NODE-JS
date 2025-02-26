@@ -1,5 +1,5 @@
 const express =require('express');
-const routes = require('./routes/studentRoute');
+const routes = require('./routes/StudentRoute');
 const { AddStudent } = require('./controller/studentController');
 const createError = require('http-errors');
 const app = express();
