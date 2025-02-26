@@ -1,20 +1,20 @@
-const lecture = require('../models/lectureModel')
-const Student = require('../models/lectureModel')
+
+const Lecture = require('../models/lectureModel')
 const mongoose = require('mongoose')
 module.exports ={
     getAllLecture: async(req,res,next)=>{
         try{
-            const result = await lecture.find()
+            const result = await Lecture.find()
             res.send(result)
         } catch (error){
             console.log(error.message);
         }
     },
 
-    AddStudent: async(req, res, next)=>{
+    AddLecture: async(req, res, next)=>{
         try{
-            const student = new lecture(req.body)
-            const result = await lecture.save();
+            const Lecture = new Lecture(req.body)
+            const result = await Lecture.save();
             res.send(result)
 
         } catch (error) {
@@ -26,14 +26,14 @@ module.exports ={
             next(error)
         }
     },
-        getStudent: async(req,res,next)=>{
+        getLecture: async(req,res,next)=>{
             const id = req.params.id;
             try{
-                const lecture = await lecture.findById(id)
-                if(!lecture){
-                    throw(createError(404, "student does not exist"))
+                const Lecture = await lecture.findById(id)
+                if(!Lecture){
+                    throw(createError(404, "Lecture does not exist"))
                 }
-                res.send(lecture)
+                res.send(Lecture)
             }catch (error) {
                 console.log(error.message);
                 if(error instanceof mongoose.CastError){
@@ -44,15 +44,15 @@ module.exports ={
             }
         },
 
-        updateStudent: async (req,res,next)=>{
+        updateLecture: async (req,res,next)=>{
             try{
                 const id = req.params.id;
                 const update = req.body;
                 const options ={new: true}
-                const result = await Student.findByIdandUpdate(id, update, options)
+                const result = await Lecture.findByIdandUpdate(id, update, options)
 
                 if (!result){
-                    throw(createError(404, "lecture does not exist"))
+                    throw(createError(404, "Lecture does not exist"))
                 }
 
                 res,send(result);
@@ -61,17 +61,17 @@ module.exports ={
                 console.log(error.message)
 
                 if(error instanceof mongoose.CastError){
-                    return next(createError(400, "lecture does not exist"));
+                    return next(createError(400, "Lecture does not exist"));
                 }
                 next(error);
             }
         },
 
-        deleteStudent:async(req,res,next)=>{
+        deleteLecture:async(req,res,next)=>{
             const id = req.params.id
             try{
-                const student = await Student.findByIdAndRemove(id)
-                if(!student){
+                const student = await Lecture.findByIdAndRemove(id)
+                if(!Lecture){
                     throw(createError(404,"lecture does not exist"))
                 }
                 res.send(student);
