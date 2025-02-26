@@ -1,29 +1,24 @@
+const express = require('express');
+const routes = express.Router();
 
-const studentController = require('../controllers/studentController');
-const controllers = require('../controlers/studentController');
-//!Import the express module
-
-const express = require('express');//This imports express
-
-const routes = express.Router();//This creates an instance of a router
+const studentController = require('../controller/studentController');
+// const {verifyAccessToken } = require ('../helpers/init_mongodb')
 
 
-//Get all students
-routes.get('/getAllstudents', studentController.getAllStudents);
+// Get all students
+routes.get('/getAllStudents', studentController.getAllStudents);
 
-//Add students
-routes.post('/addStudent', studentController.addStudent);
+// Add student
+routes.post('/AddStudent', studentController.AddStudent);
 
-//Update student
-routes.get('/getStudentById/id:', studentController.updateStudentById);
+// Get student
+routes.get('/getStudent/:id', studentController.getStudent);
 
-//Update student
-routes.patch('/deleteStudent/id:', studentController.updatetudentById);
+// Update student
+routes.patch('/updateStudent/:id', studentController.updateStudent);
 
-//Delete student
-routes.delete('/student/id:',( request, response) => {
-    response.send({type: 'Delete Request'});
-});
+// Delete student
+// routes.delete('/:id', verifyAccessToken,studentController.deleteStudent)
 
 
-module.exports = routes;
+module.exports = routes;

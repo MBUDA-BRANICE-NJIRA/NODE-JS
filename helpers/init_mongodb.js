@@ -1,9 +1,8 @@
-//This  one helping connect to mongodb
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URI, {dbname: process.env.DB_NAME})
-.then (() =>{
-    console.log('mongodb connected');
+mongoose.connect(process.env.MONGODB_URL, {dbname:process.env.DB_NAME})
+.then(()=>{
+    console.log('mongodb connected')
 })
-.catch ((err)=>console.log(err.message))
-//This connects to to the server
+
+.catch ((err)=>console.log(err.message));
