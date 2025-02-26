@@ -1,3 +1,5 @@
+//The part the one responsible for definng the user name/Unser interface
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

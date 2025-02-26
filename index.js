@@ -1,3 +1,4 @@
+//The main part of the structure
 
 const express = require('express');//This imports express
 require('dotenv').config();
@@ -10,6 +11,6 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(process.env.port || 4000, () => {
-    console.log('Server is running on port 4000')
+    console.log('Server is running on port 4000')//This is to start the server to listen on port 4000
 });//This is to start the server to listen on port 4000
 
