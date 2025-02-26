@@ -15,13 +15,14 @@ routes.get('/getAllstudents', studentController.getAllStudents);
 routes.post('/addStudent', studentController.addStudent);
 
 //Update student
-routes.get('/getStudentByid/id:', (request, response) => {
-    response.send({type: ' Update Request'});
-});
+routes.get('/getStudentById/id:', studentController.updateStudentById);
+
+//Update student
+routes.patch('/deleteStudent/id:', studentController.updatetudentById);
 
 //Delete student
-routes.delete('/students/id',(request ,response) => {
-    response.send({type: 'Delete request'});
+routes.delete('/student/id:',( request, response) => {
+    response.send({type: 'Delete Request'});
 });
 
 

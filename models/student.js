@@ -19,4 +19,5 @@ const studentSchema = new Schema({
 });
 
 const student = mongoose.model("student", studentSchema); //=>Create a model that is going to represent our collection i the DB
+
 module.exports = student; //=>Here is where Exporting this file do that we can use it in our files
