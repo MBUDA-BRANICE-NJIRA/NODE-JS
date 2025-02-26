@@ -6,13 +6,13 @@ const lectureController = require('../controller/lectureControler');
 
 
 // Get all lectures
-routes.get('/getAllLecture', lectureController.getAlllecture);
+routes.get('/getAllLecture', lectureController.getAllLecture);
 
 // Add lecture
 routes.post('/AddLecture', lectureController.AddLecture);
 
 // Get lecture
-routes.get('/getLecture/:id', lectureController.getSlecture);
+routes.get('/getLecture/:id', lectureController.getLecture);
 
 // Update lecture
 routes.patch('/updateLecture/:id', lectureController.updateLecture);

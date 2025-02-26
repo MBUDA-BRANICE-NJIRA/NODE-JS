@@ -13,8 +13,8 @@ module.exports ={
 
     AddLecture: async(req, res, next)=>{
         try{
-            const Lecture = new Lecture(req.body)
-            const result = await Lecture.save();
+            const lecture = new Lecture(req.body)
+            const result = await lecture.save()
             res.send(result)
 
         } catch (error) {
@@ -29,11 +29,11 @@ module.exports ={
         getLecture: async(req,res,next)=>{
             const id = req.params.id;
             try{
-                const Lecture = await Lecture.findById(id)
-                if(!Lecture){
+                const lecture = await Lecture.findById(id)
+                if(!lecture){
                     throw(createError(404, "Lecture does not exist"))
                 }
-                res.send(Lecture)
+                res.send(lecture)
             }catch (error) {
                 console.log(error.message);
                 if(error instanceof mongoose.CastError){

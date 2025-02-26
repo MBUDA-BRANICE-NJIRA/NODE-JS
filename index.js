@@ -1,6 +1,8 @@
 const express =require('express');
 const routes = require('./routes/StudentRoute');
+const route = require('./routes/lectureRoute')
 const { AddStudent } = require('./controller/studentController');
+const { AddLecture} = require('./controller/lectureControler')
 const createError = require('http-errors');
 const app = express();
 require('dotenv').config();
@@ -12,6 +14,7 @@ app.use(express.json());
 // app.use("/api/auth", authRoute),
 
 app.use(routes);
+app.use(route);
 
 //handling 404 error
 app.use(async(req,res,next)=>{
