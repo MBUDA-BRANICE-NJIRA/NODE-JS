@@ -1,8 +1,9 @@
 const express =require('express');
-const routes = require('./routes/StudentRoute');
+const routes = require('./routes/studentRoute');
 const route = require('./routes/lectureRoute')
-const { AddStudent } = require('./controller/studentController');
-const { AddLecture} = require('./controller/lectureControler')
+const authRoute = require('./routes/authRoute');
+// const { AddLecture} = require('./controller/lectureControler')
+// const {AddAuth} = require('./controller/authContoller')
 const createError = require('http-errors');
 const app = express();
 require('dotenv').config();
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // app.use("/api/Student",studentRoute);
 // app.use("/api/auth", authRoute),
+app.use("/api/auth", authRoute);
 
 app.use(routes);
 app.use(route);
