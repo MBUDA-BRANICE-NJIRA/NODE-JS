@@ -16,7 +16,7 @@ routes.post('/register', authContoller.register);
 routes.get('/getAuthController/:id', authContoller.getauth);
 
 // Update Password and Email
-routes.patch ('/updat authContoller.updateauth)eAuthController/:id',;
+routes.patch ('/updat authContoller.updateauth)eAuthController/:id'),
 
 // Delete Password and Email
  routes.delete('/:id', verifyAccessToken,studentController.deleteStudent)
