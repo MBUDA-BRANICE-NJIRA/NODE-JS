@@ -19,10 +19,10 @@ module.exports ={
 
         } catch (error) {
             console.log(error.message);
-            // if(error.name === "validationError"){
-            //     next(createError(422, error.message))
-            //     return;
-            // }
+            if(error.name === "validationError"){
+                next(createError(422, error.message))
+                return;
+            }
             next(error)
         }
     },
