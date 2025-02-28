@@ -1,7 +1,8 @@
 //Define a model that is going to haave username and password fields
 const mongoose = require('mongoose');
+const { Schema } = require('./studentModel');
 
-const Schema = mongoose.Schema;
+const  Schema = mongoose.Schema;
 
 const authModelSchema = new Schema({
     username: {
