@@ -24,7 +24,7 @@ module.exports ={
                 res.send('username already exists')
             }
             const passwordregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
-            if(!passwordregex.test(password)){
+            if (!passwordregex.test(password)) {
                 res.send('Password must contain at least one numeric digit, one uppercase and one lowercase letter, and at least 6 or more characters')
             }
             const Hashedpassword = await bcrypt.hash(password, 10)
