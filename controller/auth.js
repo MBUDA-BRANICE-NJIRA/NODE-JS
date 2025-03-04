@@ -1,7 +1,9 @@
-const Student = require('../models/auth_studentModel')
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
-const { insertOne } = require('../models/studentModel')
+const Student = require('../models/auth_studentModel');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const { insertOne } = require('../models/studentModel');
+const { signAccesToken } = require('../helpers/JwtHelper');//This the function that will be used to sign the token
+
 module.exports ={
     login: async(req,res,next)=>{
         const {username, password} = req.body
