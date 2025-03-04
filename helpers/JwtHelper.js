@@ -42,19 +42,21 @@ module.exports = {
         })
     },
 
-    // verifyAccessToken:(request,respond, next)=>{
-    //     if(!request.headers['authorization']) return next(createError.Unauthorized())
-    //         const authHeader = request.headers['authorization']
-    //     const bearerToken = authHeader.split(' ');
-    //     const token = bearerToken[1];
-    //     JWT.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,payload)=>{
-    //         if(err){
-    //             if(err.name === 'jsonWebTokenError'){
-    //                 return next(createError.Unauthorized('err.message'));
-    //             }
-    //         }
-    //         request.payload = payload;
-    //         next();
-    //     })
-    // }
+     verifyAccessToken:(request,respond, next)=>{
+     if(!request.headers['authorization']) return next(createError.Unauthorized())
+     const authHeader = request.headers['authorization']
+    const bearerToken = authHeader.split(' ');
+    const token = bearerToken[1];
+    JWT.verify(token,process.env.ACCESS_TOKEN_SECRET,(err, payload)=>{
+            if(err){
+                 if(err.name === 'jsonWebTokenError'){
+                     return next(createError.Unauthorized('err.message'));
+             }else {
+                    return next(createError.Unauthorized(err.message));
+             }
+         }
+         request.payload = payload;
+         next();
+     })
+    }
 }

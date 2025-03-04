@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 const studentController = require('../controller/studentController');
-// const {verifyAccessToken } = require ('../helpers/init_mongodb')
+ const {verifyAccessToken } = require ('../helpers/JwtHelper');
 
 
 // Get all students
