@@ -1,7 +1,8 @@
 const JWT = require('jsonwebtoken');
 const createError = require('http-errors');
+//const User = require('../models/userModel');
 
-const {authModel} = require('../models/authModel');
+//const {authModel} = require('../models/auth_studentModel');
 
 module.exports = {
     signAccessToken:(UserId) => {

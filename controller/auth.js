@@ -2,7 +2,7 @@ const Student = require('../models/auth_studentModel');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const { insertOne } = require('../models/studentModel');
-const { signAccesToken } = require('../helpers/JwtHelper');//This imports the signAccesToken function from the JwtHelper.js file
+const { signAccesToken } = require('../helpers/JwtHelper');   //This imports the signAccesToken function from the JwtHelper.js file
 
 module.exports = {
     login: async (req, res, next) => {
