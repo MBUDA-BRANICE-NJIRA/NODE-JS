@@ -6,7 +6,7 @@ const studentController = require('../controller/studentController');
 
 
 // Get all students
-routes.get('/getAllStudents', studentController.getAllStudents);
+routes.get('/getAllStudents', verifyAccessToken, studentController.getAllStudents);
 
 // Add student
 routes.post('/AddStudent', studentController.AddStudent);
@@ -17,8 +17,8 @@ routes.get('/getStudent/:id', studentController.getStudent);
 // Update student
 routes.patch('/updateStudent/:id', studentController.updateStudent);
 
-// Delete student
 // routes.delete('/:id', verifyAccessToken,studentController.deleteStudent)
-
+// Delete student
+routes.delete('/:id',verifyAccessToken, studentController.deleteStudent);
 
 module.exports = routes;
